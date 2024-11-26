@@ -1,0 +1,8 @@
+@font-face {
+    font-family:pokemon ;
+    src: url(/assets/fonts/PokemonHollow.ttf);
+}
+
+h1 {
+    font-family: pokemon;
+}
