@@ -31,7 +31,7 @@ function initializeGame() {
   correctLetters = [];
   wrongLetters = [];
   guessesLeft = 10;
-  pokemonImage.style.display = 'none';
+  // pokemonImage.style.display = 'none';
   messageElement.innerText = '';
   playAgainButton.style.display = 'none';
   guessesLeftElement.innerText = guessesLeft;
@@ -50,7 +50,8 @@ function displayWord() {
   if (wordElement.innerText.replace(/\s/g, '') === randomWord) {
     messageElement.innerText = 'Congratulations! You guessed the Pokémon!';
     pokemonImage.src = randomImage;
-    pokemonImage.style.display = 'block';
+    // pokemonImage.style.display = 'block';
+    // Play Pokémon cry this uses the pokemoncries website and the randomId to get the cry
     const audio = new Audio(`https://pokemoncries.com/cries-old/${randomId}.mp3`);
     audio.play();
     endGame();

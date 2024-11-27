@@ -35,7 +35,7 @@
       color: red;
     }
     #pokemon-image {
-      display: none;
+      /* display: none; */
       margin-top: 20px;
       width: 150px;
       height: 150px;
@@ -48,11 +48,14 @@
 </head>
 <body>
   <h1>Pokémon Hangman</h1>
+  <div class="imgContainer">
+  <img id="pokemon-image" alt="Pokémon" src="/assets/pokeBall.png">
+</div>
   <div id="word"></div>
   <div id="alphabet-container"></div>
   <div id="wrong-letters">Wrong letters: <span id="wrong-letters-list"></span></div>
   <div>Guesses left: <span id="guesses-left">10</span></div>
-  <img id="pokemon-image" alt="Pokémon">
+
   <div id="message"></div>
   <button id="play-again" style="display: none;">Play Again</button>
 
