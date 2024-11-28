@@ -5,7 +5,6 @@ const guessesLeftElement = document.getElementById('guesses-left');
 const pokemonImage = document.getElementById('pokemon-image');
 const messageElement = document.getElementById('message');
 const playAgainButton = document.getElementById('play-again');
-const randomId = Math.floor(Math.random() * 150) + 1; // First 150 Pokémon
 
 let randomWord = '';
 let randomImage = '';
@@ -15,7 +14,8 @@ let guessesLeft = 10;
 
 // Fetch a random Pokémon from the API
 function fetchPokemon() {
-  
+  const randomId = Math.floor(Math.random() * 150) + 1; // First 150 Pokémon
+
   fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}/`)
     .then(response => response.json())
     .then(data => {
@@ -31,6 +31,7 @@ function initializeGame() {
   correctLetters = [];
   wrongLetters = [];
   guessesLeft = 10;
+  pokemonImage.src = '/assets/pokeBall.png';
   // pokemonImage.style.display = 'none';
   messageElement.innerText = '';
   playAgainButton.style.display = 'none';
@@ -52,7 +53,8 @@ function displayWord() {
     pokemonImage.src = randomImage;
     // pokemonImage.style.display = 'block';
     // Play Pokémon cry this uses the pokemoncries website and the randomId to get the cry
-    const audio = new Audio(`https://pokemoncries.com/cries-old/${randomId}.mp3`);
+    const randomSound= Math.floor(Math.random() * 150) + 1; // First 150 Pokémon
+    const audio = new Audio(`https://pokemoncries.com/cries-old/${randomSound}.mp3`);
     audio.play();
     endGame();
   }
